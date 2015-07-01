@@ -1,4 +1,6 @@
 <?php
+ini_set('max_execution_time', 300);
+$app['debug'] = true;
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
 	'db.options' => array(
 		'driver'   => 'oci8',
