@@ -5,6 +5,10 @@ $app = new Silex\Application();
 
 include_once __DIR__ . '/../config/config.php';
 
+$app->get('/', function(Request $request) use ($app){
+    return $app['twig']->render('index.twig');
+});
+
 $app->get('/franchises', function (Request $request) use ($app) {
     $sql = "SELECT * FROM ODS_MDM_FRANCHISE_V";
     $result = $app['db']->fetchAssoc($sql);
