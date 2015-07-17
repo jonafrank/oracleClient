@@ -15,5 +15,7 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
 ));
 //Templating
 $app->register(new \Silex\Provider\TwigServiceProvider(), array(
-	'twig.path' => __DIR__ . '/../views',
+	'twig.path' => __DIR__ . '/../templates',
 ));
+//Session
+$app->register(new \Silex\Provider\SessionServiceProvider());

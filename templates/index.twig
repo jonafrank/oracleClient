@@ -1,0 +1,11 @@
+{% extends 'layout.twig' %}
+{% block content %}
+    <div class="container">
+        {% for message in app.session.getFlashBag.get('error') %}
+            <div class="alert alert-danger" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+        {{ include('queryform.twig', {'query': query}) }}
+    </div>
+{% endblock %}

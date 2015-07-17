@@ -1,0 +1,35 @@
+{% extends 'layout.twig' %}
+{% block vendor_styles %}
+    {{ parent() }}
+    <link href="/node_modules/datatables/media/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block content %}
+    <div class="container">
+        {{ include('queryform.twig', {'query': query}) }}
+    </div>
+    <table id="result-table">
+        <thead>
+            <tr>
+                {% for head in columns %}
+                    <th>{{ head }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+                <tr>
+                    {% for column in item %}
+                        <td>{{ column }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script>
+        $('#result-table').DataTable();
+    </script>
+{% endblock %}
