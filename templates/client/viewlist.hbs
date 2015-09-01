@@ -3,7 +3,8 @@
         <div class="form-group">
             <input type="text" class="form-control" id="viewNameField" value={{filter}}>
         </div>
-        <button type="button" class="btn btn-primary" id="filter_button">Filter</button>
+        <button type="button" class="btn btn-primary" id="filter_button"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
+        <button type="button" class="btn btn-danger" id="reset_button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
     </form>
     <ul>
         {{#each views}}

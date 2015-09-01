@@ -6,7 +6,8 @@ app.DbViewListShow = Backbone.View.extend({
     template: Handlebars.compile($('#viewlist-template').html()),
     events: {
         'click #filter_button': 'filterViews',
-        'submit #filter_form': 'filterViews'
+        'submit #filter_form': 'filterViews',
+        'click #reset_button': 'resetViews',
     },
     initialize: function () {
         this.collection = new app.DbViewList();
@@ -32,7 +33,12 @@ app.DbViewListShow = Backbone.View.extend({
         })
         this.collection.reset();
         this.collection = new app.DbViewList(filter);
+        this.listenTo(this.collection, 'reset', this.render);
         this.render();
+    },
+    resetViews: function() {
+        this.filterText = '';
+        this.collection.fetch({reset: true});
     }
 
 })
