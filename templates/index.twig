@@ -1,11 +1,13 @@
 {% extends 'layout.twig' %}
 {% block content %}
-    <div class="container">
-        {% for message in app.session.getFlashBag.get('error') %}
-            <div class="alert alert-danger" role="alert">
-                {{ message }}
+    <div class="container-fluid">
+        <div class="row" id="content">
+            <div class="col-sm-3 col-md-2 sidebar" id="viewslist_container">
+
             </div>
-        {% endfor %}
-        {{ include('queryform.twig', {'query': query}) }}
+        </div>
     </div>
+{% endblock %}
+{% block client_templates %}
+    {{ source('client/viewlist.hbs') }}
 {% endblock %}

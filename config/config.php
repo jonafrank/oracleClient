@@ -19,3 +19,6 @@ $app->register(new \Silex\Provider\TwigServiceProvider(), array(
 ));
 //Session
 $app->register(new \Silex\Provider\SessionServiceProvider());
+
+//Memcached
+$app['memcached'] = new \MemcachedManager\MemcachedHandler('oracleViewer');
