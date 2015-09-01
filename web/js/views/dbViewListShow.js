@@ -2,7 +2,6 @@ var app = app || {};
 
 app.DbViewListShow = Backbone.View.extend({
     el: '#viewslist_container',
-    id: 'viewlist',
     template: Handlebars.compile($('#viewlist-template').html()),
     events: {
         'click #filter_button': 'filterViews',

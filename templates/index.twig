@@ -3,11 +3,13 @@
     <div class="container-fluid">
         <div class="row" id="content">
             <div class="col-sm-3 col-md-2 sidebar" id="viewslist_container">
-
+            </div>
+            <div class="col-sm-9 col-md-10 main" id="queryForm_container">
             </div>
         </div>
     </div>
 {% endblock %}
 {% block client_templates %}
     {{ source('client/viewlist.hbs') }}
+    {{ source('client/queryForm.hbs')}}
 {% endblock %}

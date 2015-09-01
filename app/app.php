@@ -38,14 +38,9 @@ $app->post('/execute', function(Request $request) use ($app) {
         $stmt = $app['db']->prepare($query);
         $stmt->execute();
         $result = $stmt->fetchAll();
-        return $app['twig']->render('table-result.twig', array(
-            'items'   => $result,
-            'columns' => array_keys($result[0]),
-            'query'   => $query
-        ));
+        return new JsonResponse(array('query' => $query, 'result' => $result));
     } catch (Exception $e) {
-        $app['session']->getFlashBag()->add('error', $e->getMessage());
-        return $app->redirect('/');
+        return new JsonResponse(array('error' => $e->getMessage()), $e->getCode());
     }
 });
 
