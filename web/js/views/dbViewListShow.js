@@ -5,7 +5,8 @@ app.DbViewListShow = Backbone.View.extend({
     id: 'viewlist',
     template: Handlebars.compile($('#viewlist-template').html()),
     events: {
-        'click #filter_button': 'filterViews'
+        'click #filter_button': 'filterViews',
+        'submit #filter_form': 'filterViews'
     },
     initialize: function () {
         this.collection = new app.DbViewList();
