@@ -20,7 +20,7 @@ $app->get('/', function(Request $request) use ($app){
 $app->get('/views', function(Request $request) use ($app){
     $result = unserialize($app['memcached']->get('viewlist'));
     if (!$result) {
-        $sql = "SELECT view_name FROM all_views";
+        $sql = "SELECT view_name FROM all_views ORDER BY view_name ASC";
         $stmt = $app['db']->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll();
