@@ -1,3 +1,20 @@
-<script id="oracle-table" type="text/x-handlebars-template">
-    
+<script id="resultTable-template" type="text/x-handlebars-template">
+    <table id="result_table">
+        <thead>
+            <tr>
+                {{#each columns as |column ix|}}
+                    <th>{{column}}</th>
+                {{/each}}
+            </tr>
+        </thead>
+        <tbody>
+            {{#each result as |row ix|}}
+                <tr>
+                    {{#each row as |value column|}}
+                        <td>{{value}}</td>
+                    {{/each}}
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
 </script>

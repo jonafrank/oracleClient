@@ -4,6 +4,7 @@
         {% block vendor_styles %}
             <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
             <link href="/node_modules/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+            <link href="/node_modules/datatables/media/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
         {% endblock %}
         <link href="/css/styles.css" rel="stylesheet" type="text/css">
 
@@ -26,6 +27,7 @@
         {% endblock %}
         {% block javascripts %}
             <script src="/node_modules/jquery/dist/jquery.js"></script>
+            <script src="/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
             <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
             <script src="/node_modules/backbone/node_modules/underscore/underscore-min.js"></script>
             <script src="/node_modules/handlebars/dist/handlebars.min.js"></script>
@@ -34,6 +36,8 @@
             <script src="/js/models/dbView.js"></script>
             <script src="/js/collections/dbViewList.js"></script>
             <script src="/js/views/dbViewListShow.js"></script>
+            <script src="/js/views/resultTableView.js"></script>
+            <script src="/js/views/queryError.js"></script>
             <script src="/js/views/queryForm.js"></script>
             <script src="/js/app.js"></script>
         {% endblock %}
